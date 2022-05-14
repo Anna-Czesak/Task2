@@ -31,7 +31,6 @@ public class Task2 {
             for (Object o : jsonObject) { //each jsonobject
                 JSONObject jsonUser = (JSONObject) o;
                 User user = new Gson().fromJson(jsonUser.toString(), User.class);
-                System.out.println(user);
                 users.add(user);
             }
         } catch (FileNotFoundException e) {
