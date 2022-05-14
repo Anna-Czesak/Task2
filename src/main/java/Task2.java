@@ -32,6 +32,7 @@ public class Task2 {
                 JSONObject jsonUser = (JSONObject) o;
                 User user = new Gson().fromJson(jsonUser.toString(), User.class);
                 users.add(user);
+                //System.out.println(user);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -171,7 +172,7 @@ public class Task2 {
         System.out.println("\nUsers living Furthest away from each other: ");
         a.showFullName();
         b.showFullName();
-        System.out.println("Distance: " + maxDistance);
+        System.out.println("\nDistance: " + maxDistance);
         System.out.println(a.getGeolocation());
         System.out.println(b.getGeolocation());
     }
@@ -181,10 +182,6 @@ public class Task2 {
         users = readUsersFromJSON();
         carts = readCartsFromJSON();
         products = readProductsJSON();
-
-        //System.out.println(users);
-        //System.out.println(carts);
-        //System.out.println(products);
 
         //2.
         HashMap<String, Integer> categories = calculateAmountOfProductsInCategories();

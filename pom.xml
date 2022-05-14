@@ -30,6 +30,18 @@
         <version>RELEASE</version>
         <scope>compile</scope>
     </dependency>
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>RELEASE</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.20.2</version>
+        <scope>test</scope>
+    </dependency>
 
 </dependencies>
 

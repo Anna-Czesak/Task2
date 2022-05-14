@@ -14,10 +14,11 @@ public class Cart {
     @JsonProperty("__v")
     int v;
 
-    public Cart(int id, int userId, Date date, ArrayList<Product> products, int v) {
+    public Cart(int id, int userId, Date date, List <QuantityOfProduct> products, int v) {
         this.id = id;
         this.userId = userId;
         this.date = date;
+        this.products = products;
         this.v=v;
     }
 
