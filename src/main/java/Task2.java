@@ -31,6 +31,7 @@ public class Task2 {
             for (Object o : jsonObject) { //each jsonobject
                 JSONObject jsonUser = (JSONObject) o;
                 User user = new Gson().fromJson(jsonUser.toString(), User.class);
+                System.out.println(user);
                 users.add(user);
             }
         } catch (FileNotFoundException e) {
@@ -99,12 +100,12 @@ public class Task2 {
     public static HashMap<String, Integer> calculateAmountOfProductsInCategories() {
         HashMap<String, Integer> categories = new HashMap<String, Integer>(); //hashmap contains categories and amount of products of these categories
 
-        for (Product p : products) { //for each product i check if category exists in hashmap, if true - incrementing value - amount of product
+        for (Product p : products) {                                   //for each product i check if category exists in hashmap, if true - incrementing value - amount of product
             if (categories.containsKey(p.getCategory())) {
                 categories.replace(p.getCategory(), categories.get(p.getCategory()) + 1); //incrementing old value
-            } else { //if false I add new category (new key in hashmap) and set amount = 1
+            } else {                    //if false I add new category (new key in hashmap) and set amount = 1
                 categories.put(p.getCategory(), 1);
-            } //if hashMap contains category - increment amount of product
+            }   //if hashMap contains category - increment amount of product
         }
         return categories;
     }
@@ -160,7 +161,7 @@ public class Task2 {
 
         for (User user : users) {
             for (User u : users) {
-                if (user.calculateDistance(u) > maxDistance) {
+                if (user.calculateDistance(u) > maxDistance) { //if calculated distance is bigger than current - change the maxDistance
                     maxDistance = user.calculateDistance(u);
                     a = user;
                     b = u;
@@ -177,11 +178,14 @@ public class Task2 {
     }
 
     public static void main(String[] args) {
-
         //1.
         users = readUsersFromJSON();
         carts = readCartsFromJSON();
         products = readProductsJSON();
+
+        //System.out.println(users);
+        //System.out.println(carts);
+        //System.out.println(products);
 
         //2.
         HashMap<String, Integer> categories = calculateAmountOfProductsInCategories();

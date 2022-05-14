@@ -1,12 +1,15 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Geolocation {
     @JsonProperty("lat")
     float lat;
-    @JsonProperty("long")
+    @JsonProperty("longg")
     float longg;
 
-    public Geolocation(float lat, float longg) {
+
+    @JsonCreator
+    public Geolocation(float lat,float longg) {
         this.lat = lat;
         this.longg = longg;
     }
@@ -28,4 +31,11 @@ public class Geolocation {
         return longg;
     }
 
+    public void setLat(float lat) {
+        this.lat = lat;
+    }
+
+    public void setLongg(float longg) {
+        this.longg = longg;
+    }
 }
